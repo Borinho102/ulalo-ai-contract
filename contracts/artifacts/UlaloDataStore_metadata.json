@@ -1,0 +1,406 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "initMessage",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "AllDataCleared",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					}
+				],
+				"name": "AllFilesCleared",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "cid",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "FileDeleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "cid",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "fileName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "fileType",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fileSize",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "fileContent",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "score",
+						"type": "uint256"
+					}
+				],
+				"name": "FileStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "oldStr",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newStr",
+						"type": "string"
+					}
+				],
+				"name": "UpdatedMessages",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					}
+				],
+				"name": "clearAllFiles",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "cid",
+						"type": "string"
+					}
+				],
+				"name": "deleteUserFile",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "cids",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileNames",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "fileSizes",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileContents",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dates",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "scores",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getFiles",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "cids",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileNames",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "fileSizes",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "fileContents",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dates",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "scores",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "message",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "cid",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileType",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fileSize",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "fileContent",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "score",
+						"type": "uint256"
+					}
+				],
+				"name": "storeFileForUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "update",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UlaloDatastore.sol": "UlaloDataStore"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/UlaloDatastore.sol": {
+			"keccak256": "0xb9f93cc33d72201b4f27987f609c009256565ce86b90bc394a59da1fa41d1c23",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://6778579e543b00da78d7f99b9fb158a66e643c4a7e40e4ec6dd8e4cb7dc2a99f",
+				"dweb:/ipfs/QmQF662xdkYvsaHQuyKd75MD8oUfxunorGgx9fRJmi3vBJ"
+			]
+		}
+	},
+	"version": 1
+}
